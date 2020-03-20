@@ -1,0 +1,10 @@
+total PIB paises : 19
+soma da idade dos cachorros: 8
+soma da idade dos gatos: 4
+{ feminino: 
+   [ { nome: 'Fernanda', sexo: 'feminino', idade: 23 },
+     { nome: 'Mariana', sexo: 'feminino', idade: 23 } ],
+  masculino: 
+   [ { nome: 'Jonathan', sexo: 'masculino', idade: 12 },
+     { nome: 'Igor', sexo: 'masculino', idade: 20 },
+     { nome: 'Axel', sexo: 'masculino', idade: 23 } ] }

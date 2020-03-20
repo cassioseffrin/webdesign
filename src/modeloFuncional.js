@@ -49,7 +49,7 @@ var cidades = [
 ]
 var cidadesMenos20k = cidades.filter(c => c.habitantes < 20000);
 
-
+// adicionarItem(cidadesMenos20k);
 const pessoas = [
 	{ nome: 'Fernanda', sexo: 'feminino', idade: 23 },
 	{ nome: 'Jonathan', sexo: 'masculino', idade: 12 },
@@ -84,3 +84,12 @@ const maioresPorGenero2 = (pessoas) =>
 		{}
 );
 
+// adicionarItem(`pessoas original: ` + pessoas);
+
+
+// function adicionarItem(valor){
+// 	var node = document.createElement("li");
+// 	var texto = document.createTextNode(valor);
+// 	node.appendChild(texto);
+// 	document.getElementById("saida").appendChild(node);
+//   }
