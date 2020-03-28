@@ -13,15 +13,6 @@ observable.subscribe(v => console.log(v));
 
 
 
-
-
-
-
-
-
-
-
-
 // perceba  que o objeto observador está no escopo do construtor. 
 // Não podemos acessar o observador e chamar .next () 
 // fora da implementação interna do Observable. 
