@@ -1,0 +1,44 @@
+body {
+    background-color: 'black';
+    font-family: "Sans Serif", sans-serif;
+  }
+
+  .search-container {
+    margin-top: 50px;
+  }
+  .search-container .search-heading {
+    display: block;
+    margin-bottom: 50px;
+  }
+  .search-container input,
+  .search-container input:focus {
+    padding: 16px 16px 16px;
+    border: none;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .results-container {
+    margin-top: 50px;
+  }
+  .results-container .list-group .list-group-item {
+    background-color: transparent;
+    border-top: none !important;
+    border-bottom: 1px solid rgba(236, 229, 229, 0.64);
+  }
+
+  .float-bottom-right {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 1000;
+  }
+  .float-bottom-right .info-container .card {
+    display: none;
+  }
+  .float-bottom-right .info-container:hover .card,
+  .float-bottom-right .info-container .card:hover {
+    display: block;
+  }

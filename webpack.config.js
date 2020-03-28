@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/modeloFuncional.js',
+  entry: './src/array.js',
   devtool: 'inline-source-map',
   module: {
     rules: [
