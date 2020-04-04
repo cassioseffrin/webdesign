@@ -34,10 +34,12 @@ const apresentarResultados = (resp) => {
      });
    }
  }
+
+
  let campoPesquisa = document.getElementById("campo-pesquisa");
  Rx.Observable.fromEvent(campoPesquisa, 'input')
  .pluck('target', 'value')
- .filter(termoBusca => termoBusca.length > 0)
+ .filter(termoBusca => termoBusca.length > 1)
  .debounceTime(200)
  .distinctUntilChanged()
  .switchMap(termoStr => 

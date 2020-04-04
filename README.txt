@@ -47,3 +47,15 @@ https://css-tricks.com/animated-intro-rxjs/
 Google fonts
 https://kinsta.com/blog/best-google-fonts/
 
+
+criamos uma instancia na amazon free tier.->https://aws.amazon.com/pt/ec2/
+alternativas aws : godady, MS Azure, google
+criamos um subdomínio e apanhamos para IP da AWS
+
+Wordpress:
+mysql -p -u root mysql> create database wordpress; 
+mysql> create user 'wordpress'@'%' identified by ‘Senha@123'; 
+mysql> grant all on wordpress.* to ‘wordpress'@'%';
+
+login wordpress cassio
+senha admin: Pets@Concordia

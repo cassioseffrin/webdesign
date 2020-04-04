@@ -8,13 +8,6 @@ behaviorSubject.subscribe(v => console.log(v));
 behaviorSubject.next('novo valor do BehaviorSubject');
 
 
-
-
-
-
-
-
-
 // Como podemos ver o construtor do BehaviorSubject pode assumir um valor.
 //  Esse valor inicial será reproduzido para todos os assinantes até que um novo valor seja emitido; 
 //  o novo valor será reproduzido para todos os novos assinantes. 

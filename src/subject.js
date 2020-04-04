@@ -3,12 +3,10 @@ import { Subject } from 'rxjs';
 const subject = new Subject();
 
 
-
 subject.next('mensagem antes da assinatura  !');
  
-
 subject.subscribe(v => {console.log(`mensagem do subject: ${v}`);});
-
+ 
 subject.next('mensagem depois da assinatura !');
  
 

@@ -8,7 +8,7 @@ const observable = new Observable(sujeito => {
 });
 
  
-observable.subscribe(v => console.log(v));
+observable.subscribe(valor => console.log(valor));
 
 
 
