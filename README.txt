@@ -57,5 +57,12 @@ mysql -p -u root mysql> create database wordpress;
 mysql> create user 'wordpress'@'%' identified by ‘Senha@123'; 
 mysql> grant all on wordpress.* to ‘wordpress'@'%';
 
+
 login wordpress cassio
 senha admin: Pets@Concordia
+
+Webview:
+android:
+https://tiagoaguiar.co/webview-android-tutorial
+ios:
+http://agenciadac.com.br/blog-ios/criando-um-web-view-no-iphone/
