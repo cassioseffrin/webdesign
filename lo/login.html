@@ -7,3 +7,23 @@
     <input type="submit" name="Submit" value="Login" /> <br><br>
     
     </form>
+
+
+    <?php
+require('config.php');
+$name=$_REQUEST['name'];
+$password=$_REQUEST['password'];
+$dashboard = $CFG->wwwroot;
+$user = authenticate_user_login($name, $password);
+if(complete_user_login($user))
+{
+echo "login";
+}
+else
+{
+   echo "not login";
+}
+
+
+
+?>
