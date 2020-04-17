@@ -101,8 +101,6 @@ npm install parse-dashboard
 node iniciaParseServer.sh
 
 Referencias:
-
-https://www.andrewcbancroft.com/2016/04/17/deploying-parse-dashboard/
 https://github.com/parse-community/parse-server
 https://github.com/parse-community/parse-dashboard
 
