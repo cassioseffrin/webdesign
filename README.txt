@@ -108,3 +108,98 @@ https://parseplatform.org/
 
 https://www.youtube.com/watch?v=o522ovITvW4
 https://www.youtube.com/watch?v=Em5grOlQNFQ
+
+
+#apt install -y mongodb
+
+#mongo
+
+#db.createUser(
+  {
+    user: "Cassio",
+    pwd: "123",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+
+npm install -g parse-server mongodb-runner parse-dashboard express
+mongodb-runner start
+
+query{
+  objects{
+    findCliente (where: { idade: {_gte:20}}){
+      count
+      results {nome}
+    }
+  }
+}
+
+
+##link para estudar o graphql
+http://apis.guru/graphql-apis/
+
+
+
+# script para iniciar parse-server, parse-dashboard e graphql
+var fs = require('fs');
+var http = require('http');
+var https = require('https');
+var express = require('express');
+//var ParseServer = require('parse-server').ParseServer;
+var ParseDashboard = require('parse-dashboard');
+var app = express();
+var port = 1337;
+const { default: ParseServer, ParseGraphQLServer } = require('parse-server');
+
+var options = {
+    key: fs.readFileSync('./key.pem', 'utf8'),
+    cert: fs.readFileSync('./server.crt', 'utf8'),
+};
+
+//databaseURI: 'mongodb://localhost:27017/test22',
+
+const parseServer = new ParseServer({
+  databaseURI: 'postgres://postgres:apirest@localhost:5432/api',
+  appId: 'aulaparse',
+  masterKey: 'aulaparse',
+  serverURL: 'http://localhost:1337/parse',
+  publicServerURL: 'http://localhost:1337/parse'
+});
+;
+
+var dashboard = new ParseDashboard({
+    "apps": [{
+        "serverURL": "https://aws.magnani.ind.br:1337/parse",
+        "graphQLServerURL": "https://aws.magnani.ind.br:1337/graphql",
+        "appId": "aulaparse",
+        "masterKey": "aulaparse",
+        "appName": "aulaparse"
+    }],
+    "users": [{
+        "user": "admin",
+        "pass": "aulaparse"
+    }]
+});
+
+const parseGraphQLServer = new ParseGraphQLServer(
+  parseServer,
+  {
+    graphQLPath: '/graphql',
+    playgroundPath: '/playground'
+  }
+);
+
+//app.use('/parse', parse);
+app.use('/parse', parseServer.app);
+app.use('/dashboard', dashboard);
+
+parseGraphQLServer.applyGraphQL(app); // Mounts the GraphQL API
+parseGraphQLServer.applyPlayground(app); // (Optional) Mounts the GraphQL Playground - do NOT use in Production
+
+
+var server = https.createServer(options, app).listen(port, function() {
+    console.log("server listening on port " + port);
+});
+
+
+
