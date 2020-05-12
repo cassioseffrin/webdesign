@@ -133,15 +133,67 @@ var server = https.createServer(options, app).listen(port, function() {
 
 
 
-CSS Grid: igor, Lucas, Teilor, Tiago B 
+igor, Lucas, Teilor, Tiago B -> CSS Grid: 
 
 Sass/Scss: emanuel, daniel, thiago, leonardo, gabriel - SCSS
-
 
 Axel, Jonathan, Gabriel Turati, Filipe - FlexBox
 
 
 
 https://docs.parseplatform.org/graphql/guide/
+
+
+
+sudo add-apt-repository ppa:ondrej/php
+apt update
+apt-cache search php |grep server
+apt  install apache2 php7.4 mysql-server
+ 
+/etc/init.d/apache2 start
+ 
+ 
+cd /var/www/
+ 
+ 
+wget https://download.moodle.org/download.php/direct/stable38/moodle-latest-38.tgz
+ 
+tar xzvf moodle-latest-38.tgz
+ 
+chown www-data.www-data moodle -R
+ 
+mkdir moodledata
+chown www-data.www-data moodledata/ -R
+ 
+cd www/html/
+ 
+cd moodle/
+ 
+ 
+apt install php7.4-curl
+apt install php7.4-zip
+apt install php7.4-mysql
+apt install php7.4-xml
+apt install php7.4-gd
+apt install php7.4-intl
+
+/etc/init.d/apache2 restart
+ 
+mysql -p root
+mysql -p
+
+
+create database moodle;
+create user moodle@localhost identified by 'Senha@123'; 
+grant all on moodle.* to moodle@localhost;
+
+ 
+ 
+
+/etc/init.d/apache2 restart
+
+
+WebDesign@2020
+
 
 
