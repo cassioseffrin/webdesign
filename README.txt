@@ -193,7 +193,9 @@ grant all on moodle.* to moodle@localhost;
 /etc/init.d/apache2 restart
 
 
-WebDesign@2020
+ https://magento.com/compare-open-source-and-magento-commerce
+ https://www.opencart.com/
+https://br.wordpress.org/plugins/woocommerce/
 
 
 
