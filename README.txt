@@ -199,3 +199,7 @@ https://br.wordpress.org/plugins/woocommerce/
 
 
 
+ UPDATE mdl_user SET password=MD5('senhaadmin') WHERE username='admin';
+
+
+

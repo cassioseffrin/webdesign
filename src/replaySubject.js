@@ -11,16 +11,6 @@ replaySubject.next('Mensagem do ReplaySubject 2!');
 
 
 
-
-
-
-
-
-
-
-
-
-
 // Observe que a API do ReplaySubject é muito semelhante ao Subject. 
 // Porem nesse caso, não perdemos o primeiro evento. 
 // O ReplaySubject repete o último valor emitido que perdemos. 

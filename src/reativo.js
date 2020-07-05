@@ -1,6 +1,17 @@
 import { from } from 'rxjs';
 import { filter, reduce, map } from 'rxjs/operators';
 
+var pessoas = [
+	{ nome: 'Fernanda', sexo: 'feminino', idade: 23 },
+	{ nome: 'Jonathan', sexo: 'masculino', idade: 12 },
+	{ nome: 'Igor', sexo: 'masculino', idade: 20 },
+	{ nome: 'Mariana', sexo: 'feminino', idade: 23 },
+	{ nome: 'Axel', sexo: 'masculino', idade: 23 }
+];
+
+setTimeout(() => {
+	pessoas.push({ nome: 'Rodo', sexo: 'masculino', idade: 44 });
+}, 2000);
 
 const maioresPorGenero = () => (source$) =>
 	source$.pipe(
@@ -8,39 +19,25 @@ const maioresPorGenero = () => (source$) =>
 		reduce(
 			(a, b) => ({
 				...a,
-				[b.sexo]: [ ...(a[b.sexo] || []), b ],
+				[b.sexo]: [ ...(a[b.sexo] || []), b ]
 			}),
 			{}
 		)
-);
+	);
 
-var pessoas = [
-	{ nome: 'Fernanda', sexo: 'feminino', idade: 23 },
-	{ nome: 'Jonathan', sexo: 'masculino', idade: 12 },
-	{ nome: 'Igor', sexo: 'masculino', idade: 20 },
-	{ nome: 'Mariana', sexo: 'feminino', idade: 23 },
-	{ nome: 'Axel', sexo: 'masculino', idade: 23 },
-];
+console.log(maioresPorGenero);
 
-
-setTimeout(()=>{
-	pessoas.push({ nome: 'Rodo', sexo: 'masculino', idade: 44 });
-},2000 );
-
-// from(pessoas).pipe(maioresPorGenero()).subscribe((e) => console.log(e), (err) => console.error(err));
 from(pessoas).pipe(maioresPorGenero()).subscribe((e) => adicionarObj(e), (err) => console.error(err));
 
-
-function adicionarObj(obj){
+function adicionarObj(obj) {
 	adicionarItem('masculino');
- 
-	obj.masculino.map((e) => adicionarItem(e.nome))
-	 
+
+	obj.masculino.map((e) => adicionarItem(e.nome));
 }
 
-function adicionarItem(item){
-  var node = document.createElement("li");
-  var texto = document.createTextNode(item);
-  node.appendChild(texto);
-  document.getElementById("saida").appendChild(node);
+function adicionarItem(item) {
+	var node = document.createElement('li');
+	var texto = document.createTextNode(item);
+	node.appendChild(texto);
+	document.getElementById('saida').appendChild(node);
 }
